@@ -1,0 +1,16 @@
+<div *ngIf="hero">
+  <h2>{{hero.name}} details!</h2>
+  <hr>
+  <div class="form-group">
+    <label for="id">ID: </label>
+    <input type="text" readonly class="form-control" id="staticEmail" value="{{hero.id}}">
+  </div>
+  <div class="form-group">
+    <label for="name">Name: </label>
+    <input [(ngModel)]="hero.name" type="text" class="form-control" id="name" placeholder="Name">
+  </div>
+  <button (click)="goBack()" class="btn btn-default">Back</button>  
+  <button (click)="delete(); $event.stopPropagation()" class="btn btn-danger">Delete</button>    
+  <button (click)="save()" class="btn btn-primary">Save</button>
+  <hr>
+</div>

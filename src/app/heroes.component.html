@@ -1,0 +1,33 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>My Heroes</h2>
+      <table class="table table-hover">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let hero of heroes">
+          <tr>
+            <td>{{hero.id}}</td>
+            <td>{{hero.name}}</td>
+            <td><a [routerLink]="['/detail', hero.id]"><i class="fa fa-pencil"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+    </div>
+    <div class="col-md-12">
+        <h2>Add new hero</h2>
+        <div class="form-group">
+          <label for="heroName">Name: </label>
+          <input #heroName type="text" class="form-control" id="heroName" placeholder="Name">
+        </div>
+        <button class="btn btn-primary" (click)="add(heroName.value); heroName.value=''">Add</button>
+        <hr>
+      </div>
+  </div>
+</div>
